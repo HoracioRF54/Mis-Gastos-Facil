@@ -1,0 +1,6 @@
+{
+  "name": "Gestión de Gastos y Presupuesto Diario",
+  "description": "Aplicación de finanzas personales con control de sueldo, gastos fijos, ahorro, límite diario en tiempo real con alertas y gráficos mensuales sincronizados entre PC y celular.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

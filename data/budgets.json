@@ -1,0 +1,230 @@
+{
+  "MI-PRESUPUESTO": {
+    "syncCode": "MI-PRESUPUESTO",
+    "config": {
+      "salary": 1200000,
+      "savingsGoal": 200000,
+      "fixedExpenses": [
+        {
+          "id": "f-1",
+          "name": "Alquiler / Hipoteca",
+          "amount": 350000,
+          "category": "Vivienda",
+          "dueDate": 5,
+          "isPaid": true
+        },
+        {
+          "id": "f-2",
+          "name": "Servicios (Luz, Agua, Gas)",
+          "amount": 65000,
+          "category": "Servicios",
+          "dueDate": 10,
+          "isPaid": true
+        },
+        {
+          "id": "f-3",
+          "name": "Internet y Telefonía",
+          "amount": 35000,
+          "category": "Servicios",
+          "dueDate": 15,
+          "isPaid": false
+        },
+        {
+          "id": "f-4",
+          "name": "Seguro Médico / Obra Social",
+          "amount": 50000,
+          "category": "Salud",
+          "dueDate": 20,
+          "isPaid": false
+        },
+        {
+          "id": "f-5",
+          "name": "Suscripciones (Streaming)",
+          "amount": 20000,
+          "category": "Ocio",
+          "dueDate": 12,
+          "isPaid": true
+        }
+      ],
+      "currency": "$",
+      "month": "2026-09"
+    },
+    "dailyExpenses": [
+      {
+        "id": "d-1",
+        "amount": 8500,
+        "category": "Comida y Supermercado",
+        "description": "Supermercado compras semanales",
+        "date": "2026-09-18",
+        "paymentMethod": "Tarjeta de Débito",
+        "createdAt": 1789743108607
+      },
+      {
+        "id": "d-2",
+        "amount": 2500,
+        "category": "Café y Salidas",
+        "description": "Café con tostadas",
+        "date": "2026-09-18",
+        "paymentMethod": "Efectivo",
+        "createdAt": 1789750308607
+      }
+    ],
+    "lastUpdated": 1789753908607,
+    "license": {
+      "plan": "free",
+      "isActive": false
+    }
+  },
+  "PRE-8474": {
+    "syncCode": "PRE-8474",
+    "config": {
+      "salary": 1200000,
+      "savingsGoal": 200000,
+      "fixedExpenses": [
+        {
+          "id": "f-1",
+          "name": "Alquiler / Hipoteca",
+          "amount": 350000,
+          "category": "Vivienda",
+          "dueDate": 5,
+          "isPaid": true
+        },
+        {
+          "id": "f-2",
+          "name": "Servicios (Luz, Agua, Gas)",
+          "amount": 65000,
+          "category": "Servicios",
+          "dueDate": 10,
+          "isPaid": true
+        },
+        {
+          "id": "f-3",
+          "name": "Internet y Telefonía",
+          "amount": 35000,
+          "category": "Servicios",
+          "dueDate": 15,
+          "isPaid": false
+        },
+        {
+          "id": "f-4",
+          "name": "Seguro Médico / Obra Social",
+          "amount": 50000,
+          "category": "Salud",
+          "dueDate": 20,
+          "isPaid": false
+        },
+        {
+          "id": "f-5",
+          "name": "Suscripciones (Streaming)",
+          "amount": 20000,
+          "category": "Ocio",
+          "dueDate": 12,
+          "isPaid": true
+        }
+      ],
+      "currency": "$",
+      "month": "2026-09"
+    },
+    "dailyExpenses": [
+      {
+        "id": "d-1",
+        "amount": 8500,
+        "category": "Comida y Supermercado",
+        "description": "Supermercado compras semanales",
+        "date": "2026-09-18",
+        "paymentMethod": "Tarjeta de Débito",
+        "createdAt": 1789743108607
+      },
+      {
+        "id": "d-2",
+        "amount": 2500,
+        "category": "Café y Salidas",
+        "description": "Café con tostadas",
+        "date": "2026-09-18",
+        "paymentMethod": "Efectivo",
+        "createdAt": 1789750308607
+      }
+    ],
+    "lastUpdated": 1789753908607,
+    "license": {
+      "plan": "free",
+      "isActive": false
+    }
+  },
+  "PRE-4868": {
+    "syncCode": "PRE-4868",
+    "config": {
+      "salary": 1200000,
+      "savingsGoal": 200000,
+      "fixedExpenses": [
+        {
+          "id": "f-1",
+          "name": "Alquiler / Hipoteca",
+          "amount": 350000,
+          "category": "Vivienda",
+          "dueDate": 5,
+          "isPaid": true
+        },
+        {
+          "id": "f-2",
+          "name": "Servicios (Luz, Agua, Gas)",
+          "amount": 65000,
+          "category": "Servicios",
+          "dueDate": 10,
+          "isPaid": true
+        },
+        {
+          "id": "f-3",
+          "name": "Internet y Telefonía",
+          "amount": 35000,
+          "category": "Servicios",
+          "dueDate": 15,
+          "isPaid": false
+        },
+        {
+          "id": "f-4",
+          "name": "Seguro Médico / Obra Social",
+          "amount": 50000,
+          "category": "Salud",
+          "dueDate": 20,
+          "isPaid": false
+        },
+        {
+          "id": "f-5",
+          "name": "Suscripciones (Streaming)",
+          "amount": 20000,
+          "category": "Ocio",
+          "dueDate": 12,
+          "isPaid": true
+        }
+      ],
+      "currency": "$",
+      "month": "2026-09"
+    },
+    "dailyExpenses": [
+      {
+        "id": "d-1",
+        "amount": 8500,
+        "category": "Comida y Supermercado",
+        "description": "Supermercado compras semanales",
+        "date": "2026-09-18",
+        "paymentMethod": "Tarjeta de Débito",
+        "createdAt": 1789743210475
+      },
+      {
+        "id": "d-2",
+        "amount": 2500,
+        "category": "Café y Salidas",
+        "description": "Café con tostadas",
+        "date": "2026-09-18",
+        "paymentMethod": "Efectivo",
+        "createdAt": 1789750410475
+      }
+    ],
+    "lastUpdated": 1789754010475,
+    "license": {
+      "plan": "free",
+      "isActive": false
+    }
+  }
+}

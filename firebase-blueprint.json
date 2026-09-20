@@ -1,0 +1,38 @@
+{
+  "entities": {
+    "BudgetDocument": {
+      "title": "Budget Document",
+      "description": "Financial records including expenses, budget config, and category limits for personal budget tracking",
+      "type": "object",
+      "properties": {
+        "syncCode": {
+          "type": "string",
+          "description": "Identifier for the budget document"
+        },
+        "expenses": {
+          "type": "array",
+          "description": "Array of recorded expenses with fixed vs variable flag"
+        },
+        "config": {
+          "type": "object",
+          "description": "Budget configuration including monthly income, salaryStartDate, and savings target"
+        },
+        "categoryLimits": {
+          "type": "array",
+          "description": "Custom budget limits for variable categories"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "description": "ISO timestamp of last update"
+        }
+      },
+      "required": ["expenses", "config"]
+    }
+  },
+  "firestore": {
+    "/budgets/{budgetId}": {
+      "schema": "BudgetDocument",
+      "description": "Universal cloud synced budget document accessible across user devices"
+    }
+  }
+}
