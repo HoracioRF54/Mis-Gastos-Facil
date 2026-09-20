@@ -142,43 +142,45 @@ export const ExpenseFormModal: React.FC<ExpenseFormModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs animate-in fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-xs animate-in fade-in overflow-y-auto">
       <div 
         id="modal-expense-form"
-        className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl"
+        className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-lg max-h-[90vh] flex flex-col my-auto overflow-hidden shadow-2xl"
       >
-        {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-800 bg-slate-900/90">
+        {/* Header - Fixed/Sticky */}
+        <div className="flex items-center justify-between px-5 py-3.5 sm:py-4 border-b border-slate-800 bg-slate-900/95 shrink-0">
           <div className="flex items-center gap-2">
             {editingExpense ? (
-              <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400">
+              <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0">
                 <Edit3 className="w-4 h-4" />
               </div>
             ) : (
-              <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+              <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
                 <Plus className="w-4 h-4" />
               </div>
             )}
-            <div>
-              <h3 className="text-base font-bold text-white">
+            <div className="min-w-0">
+              <h3 className="text-sm sm:text-base font-bold text-white truncate">
                 {editingExpense ? 'Modificar o Corregir Gasto' : 'Cargar Nuevo Gasto Diario'}
               </h3>
-              <p className="text-xs text-slate-400">
+              <p className="text-[11px] sm:text-xs text-slate-400 truncate">
                 {editingExpense ? 'Edita el monto, categoría o descripción' : 'Se restará de tu cuota diaria recomendada'}
               </p>
             </div>
           </div>
           <button
             id="btn-close-expense-modal"
+            type="button"
             onClick={onClose}
-            className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors shrink-0 cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="p-5 space-y-4">
+        {/* Scrollable Form Body */}
+        <form onSubmit={handleSubmit} className="flex flex-col flex-1 overflow-hidden">
+          <div className="p-4 sm:p-5 space-y-4 overflow-y-auto flex-1 overscroll-contain">
           
           {/* Amount Input with Currency Symbol */}
           <div>
@@ -207,7 +209,7 @@ export const ExpenseFormModal: React.FC<ExpenseFormModalProps> = ({
                 value={amount}
                 onFocus={(e) => e.target.select()}
                 onChange={(e) => setAmount(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-2xl font-black text-white focus:outline-hidden focus:border-emerald-500 transition-colors"
+                className="w-full pl-10 pr-4 py-2.5 sm:py-3 bg-slate-800 border border-slate-700 rounded-xl text-xl sm:text-2xl font-black text-white focus:outline-hidden focus:border-emerald-500 transition-colors"
               />
             </div>
             
@@ -399,10 +401,10 @@ export const ExpenseFormModal: React.FC<ExpenseFormModalProps> = ({
           </div>
 
           {/* Date & Payment Method */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pb-2">
             <div>
               <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-slate-400" />
+                <Calendar className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Fecha del Gasto</span>
               </label>
               <input
@@ -411,20 +413,20 @@ export const ExpenseFormModal: React.FC<ExpenseFormModalProps> = ({
                 required
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-hidden focus:border-emerald-500"
+                className="w-full px-3 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-xs sm:text-sm text-white focus:outline-hidden focus:border-emerald-500 transition-colors min-h-[42px]"
               />
             </div>
 
             <div>
               <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
-                <CreditCard className="w-3.5 h-3.5 text-slate-400" />
+                <CreditCard className="w-3.5 h-3.5 text-blue-400" />
                 <span>Método de Pago</span>
               </label>
               <select
                 id="select-expense-payment"
                 value={paymentMethod}
                 onChange={(e) => setPaymentMethod(e.target.value)}
-                className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-hidden focus:border-emerald-500"
+                className="w-full px-3 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-xs sm:text-sm text-white focus:outline-hidden focus:border-emerald-500 transition-colors min-h-[42px]"
               >
                 {PAYMENT_METHODS.map((pm) => (
                   <option key={pm} value={pm}>{pm}</option>
@@ -433,13 +435,15 @@ export const ExpenseFormModal: React.FC<ExpenseFormModalProps> = ({
             </div>
           </div>
 
-          {/* Submit & Delete Buttons */}
-          <div className="pt-2 flex flex-col sm:flex-row items-center gap-2">
+          </div>{/* End scrollable body div */}
+
+          {/* Submit & Delete Buttons - Sticky/Fixed Footer */}
+          <div className="p-3 sm:p-4 border-t border-slate-800 bg-slate-900/95 shrink-0 flex flex-col-reverse sm:flex-row items-center gap-2">
             {editingExpense && onDelete && (
               <button
                 type="button"
                 onClick={handleDelete}
-                className="w-full sm:w-auto px-4 py-3 bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 rounded-xl text-xs font-bold transition-colors flex items-center justify-center gap-1.5 shrink-0"
+                className="w-full sm:w-auto px-4 py-2.5 bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 rounded-xl text-xs font-bold transition-colors flex items-center justify-center gap-1.5 shrink-0 cursor-pointer"
               >
                 <Trash2 className="w-4 h-4" />
                 <span>Eliminar</span>
@@ -449,7 +453,7 @@ export const ExpenseFormModal: React.FC<ExpenseFormModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="w-full sm:w-auto px-4 py-3 text-slate-400 hover:text-white rounded-xl text-xs font-semibold transition-colors"
+              className="w-full sm:w-auto px-4 py-2.5 text-slate-400 hover:text-white rounded-xl text-xs font-semibold transition-colors cursor-pointer"
             >
               Cancelar
             </button>
@@ -457,7 +461,7 @@ export const ExpenseFormModal: React.FC<ExpenseFormModalProps> = ({
             <button
               id="btn-submit-expense"
               type="submit"
-              className="w-full flex-1 py-3 px-4 bg-emerald-600 hover:bg-emerald-500 active:scale-98 text-white rounded-xl text-sm font-bold shadow-md transition-all flex items-center justify-center gap-2"
+              className="w-full flex-1 py-3 px-4 bg-emerald-600 hover:bg-emerald-500 active:scale-98 text-white rounded-xl text-xs sm:text-sm font-bold shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <Check className="w-4 h-4" />
               <span>{editingExpense ? 'Guardar Cambios' : 'Registrar Gasto y Actualizar Cuota'}</span>
